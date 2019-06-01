@@ -1,0 +1,49 @@
+version: '3'
+
+volumes:
+  db_data: {}
+
+services:
+    db:
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: "root_secure"
+            MYSQL_USER: "challenge"
+            MYSQL_PASSWORD: "egnellahc"
+            MYSQL_DATABASE: "foneco"
+        ports:
+            - "3306:3306"
+        expose:
+            - "3306"
+        volumes:
+            - ./config:/docker-entrypoint-initdb.d
+        networks:
+            - app-network
+    
+    node-app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+        ports:
+            - "3003:3003"
+        expose:
+            - "3003"
+        networks:
+            - app-network
+
+    web-client:
+        build: 
+            context: .
+            dockerfile: Dockerfile-client
+        ports:
+            - "80:80"
+        expose:
+            -  "80"
+        networks:
+            - app-network
+
+networks:
+  app-network:
+    driver: bridge

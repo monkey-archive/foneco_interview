@@ -1,0 +1,92 @@
+body {
+    background-color: #F7F6F2;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+}
+
+#app {
+    flex: 1 auto;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main {
+    flex: 1 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.comment-list {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form {
+    flex: 0 1 auto;
+}
+
+.comments {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    flex: 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.pair {
+    background: #C64451
+}
+
+.comment {
+    min-height: 60px;
+    padding: 20px 0 0 10px;
+    display: flex;
+}
+
+.comment-even {
+    background-color: #F5F4EF;
+}
+
+.comment-skeleton {
+    flex: 1 0 auto;
+    height: 60px;
+}
+
+.comment-info {
+    min-width: 250px;
+}
+.comment-info > a {
+    text-decoration: underline;
+    color: #C64451;
+}
+
+.comment-text {
+    white-space: pre-wrap;
+    align-self: center;
+    padding-bottom: 20px;
+}
+
+.form-control:focus {
+    border-color: #C64451;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(198, 68, 81, 0.6);
+}
+
+.btn-primary, .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #C64451 !important;
+    border-color: #C64451 !important; 
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(198, 68, 81, 0.6);
+}
+
+.btn:focus,.btn:active {
+    box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.075), 0 0 8px rgba(198, 68, 81, 0.8) !important;
+ }
